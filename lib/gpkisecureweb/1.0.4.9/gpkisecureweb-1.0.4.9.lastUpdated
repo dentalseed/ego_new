@@ -1,0 +1,10 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu May 23 10:33:19 KST 2024
+https\://maven.egovframe.go.kr/maven/.lastUpdated=1716427999882
+file\://${project.basedir}/src/main/webapp/WEB-INF/lib/.lastUpdated=1716427999889
+https\://repo.maven.apache.org/maven2/.lastUpdated=1716427999574
+https\://maven.egovframe.go.kr/maven/.error=
+https\://repo1.maven.org/maven2/.error=
+https\://repo.maven.apache.org/maven2/.error=
+file\://${project.basedir}/src/main/webapp/WEB-INF/lib/.error=
+https\://repo1.maven.org/maven2/.lastUpdated=1716427999791

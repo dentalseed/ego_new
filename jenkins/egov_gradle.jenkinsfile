@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+     tools {
+        jdk("jdk-21.0.1")
+     }
+    environment {
+        BUILD_TARGET_HOME = '${BUILD_HOME}'
+        PROJECT = 'egovgradle'
+        APP_WAR_FILE = 'egovgradle.war'
+    }
+
+    stages {
+        stage('빌드 테스트') {
+             steps {
+                  echo 'Build Start "${PROJECT}"'
+                  sh 'chmod +x gradlew'
+                  sh './gradlew bootWar'
+                  echo 'Build End "${PROJECT}"'
+              }
+        }
+        stage('원격 서버로 복사') {
+          steps {
+              echo 'Copy Start "${APP_API}"'
+
+              sh'''
+              scp -i /var/jenkins_home/key/denb-v1.pem -P 38371 -r ./docker dena@58.229.180.228:/home/dena/egov_gradle
+              cd ./${APP_API}/build/libs
+              scp -i /var/jenkins_home/key/denb-v1.pem -P 38371 ${APP_WAR_FILE} dena@58.229.180.228:/home/dena/egov_gradle/docker/denb-web
+              '''
+              echo 'Copy End "${APP_API}"'
+          }
+        }
+        stage('실행') {
+          steps {
+              echo 'Execute Start "${PROJECT}"'
+
+              sh'''
+              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/denb-web ; bash;" "chmod +x docker-web-deploy.sh"
+              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/denb-web ; bash;" "./docker-web-deploy.sh  patient-care-web01"
+              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/denb-web ; bash;" "./docker-web-deploy.sh  patient-care-web02"
+              '''
+              echo 'Execute End "${PROJECT}"'
+          }
+        }
+    }
+    post {
+        success {
+            echo "SUCCESS"
+        }
+    }
+}
