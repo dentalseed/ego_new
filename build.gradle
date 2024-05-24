@@ -109,7 +109,8 @@ dependencies {
 	implementation 'egovframework.com.ems:sndng-mail:1.0'
     implementation 'org.egovframe.rte:org.egovframe.rte.bat.core:4.0.0' // replace with the actual version
     implementation 'org.egovframe.rte:org.egovframe.rte.fdl.excel:4.0.0' // replace with the actual version
-    
+    implementation 'org.projectlombok:lombok:1.18.22' // 최신 버전으로 변경
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
 	implementation files('lib/OmniEntSDKCore-1.0.3.5.jar')
 	implementation files('lib/OmniEntSDKServerCore-1.0.3.5.jar')
