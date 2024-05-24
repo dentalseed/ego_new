@@ -11,6 +11,10 @@ configurations {
 		exclude group: 'org.springframework.boot', module: 'org.springframework.boot:spring-boot-starter-logging'
 	}
 }
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
  
 group = 'egovframework'
 version = '1.0.0'
