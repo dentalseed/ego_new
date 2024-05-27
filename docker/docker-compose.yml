@@ -5,7 +5,7 @@ version: "3.1"
 services:
   web01:
     container_name: ego_web01
-    hostname: egov-web
+    hostname: ego_web01
     ports:
       - "9003:8080"
     env_file:
