@@ -20,8 +20,7 @@ attempt=1
 while [ $attempt -le $MAX_ATTEMPTS ]
 do
     echo "Attempting health check for server $1, attempt: $attempt"
-   # Nginx 컨테이너에서 요청... 8080포트로 접근하기위해
-    response=$( docker exec nginx curl -sS "$URL")
+    response=$(curl -sS "$URL")
     if [[ $response == *"$SUCCESS_MESSAGE"* ]]; then
         echo "Health check successful for server $1!"
         exit 0
@@ -31,5 +30,7 @@ do
         ((attempt++))
     fi
 done
+
 echo "Maximum attempts reached. Health check failed for server $1."
 exit 1
+
