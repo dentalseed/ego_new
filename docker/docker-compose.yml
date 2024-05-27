@@ -4,7 +4,7 @@ version: "3.1"
 # 실행하려는 컨테이너들 정의
 services:
   web01:
-    container_name: egov-web
+    container_name: ego_web01
     hostname: egov-web
     ports:
       - "9003:8080"
