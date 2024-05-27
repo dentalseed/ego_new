@@ -6,7 +6,7 @@ fi
 
 URL="$1:8080/health"
 SUCCESS_MESSAGE="SUCCESS"
-MAX_ATTEMPTS=100
+MAX_ATTEMPTS=40
 DELAY_SECONDS=1
 # 도커 스탑, 삭제
 docker stop $1
