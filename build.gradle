@@ -27,6 +27,11 @@ repositories {
      
     }
 }
+bootWar {
+    archiveBaseName = 'ego-web'
+    archiveFileName = 'ego-web.war'
+    archiveVersion = '1.0.0'
+}
  
 dependencies {
 
