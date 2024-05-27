@@ -5,8 +5,8 @@ pipeline {
      }
     environment {
         BUILD_TARGET_HOME = '${BUILD_HOME}'
-        PROJECT = 'egov_web'
-        APP_WAR_FILE = 'ego-web.war'
+        PROJECT = 'egov-web'
+        APP_WAR_FILE = 'ego.war'
     }
 
     stages {
