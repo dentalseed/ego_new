@@ -2,8 +2,8 @@ version: "3"
 
 services:
   web01:
-    container_name: egov_gradle
-    hostname: egov_gradle
+    container_name: ego-web
+    hostname: ego-web
     ports:
       - "9003:8080"
     build:
