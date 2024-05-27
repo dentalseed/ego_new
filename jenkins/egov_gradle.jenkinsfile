@@ -1,12 +1,12 @@
 pipeline {
     agent any
      tools {
-        jdk("jdk-21.0.1")
+         jdk("jdk1.8")
      }
     environment {
         BUILD_TARGET_HOME = '${BUILD_HOME}'
-        PROJECT = 'egovgradle'
-        APP_WAR_FILE = 'egovgradle.war'
+        PROJECT = 'patient-care'
+        APP_WAR_FILE = 'web.war'
     }
 
     stages {
