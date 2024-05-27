@@ -33,5 +33,6 @@ do
     fi
 done
 
+
 echo "Maximum attempts reached. Health check failed for server $1."
 exit 1
