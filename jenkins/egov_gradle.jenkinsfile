@@ -36,8 +36,7 @@ pipeline {
 
               sh'''
               ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/ego-web ; bash;" "chmod +x docker-web-deploy.sh"
-              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/ego-web ; bash;" "./docker-web-deploy.sh  patient-care-web01"
-              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/ego-web ; bash;" "./docker-web-deploy.sh  patient-care-web02"
+              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/ego-web ; bash;" "./docker-web-deploy.sh  ego-web"
               '''
               echo 'Execute End "${PROJECT}"'
           }
