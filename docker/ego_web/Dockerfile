@@ -1,4 +1,4 @@
-FROM openjdk:21-ea-1-jdk-slim
+FROM openjdk:8-jdk-slim
 LABEL authors="dhwnk"
 
 # Dockerfile 변수 선언
