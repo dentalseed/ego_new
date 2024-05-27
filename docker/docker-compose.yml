@@ -4,37 +4,19 @@ version: "3.1"
 # 실행하려는 컨테이너들 정의
 services:
   web01:
-    container_name: patient-care-web01
-    hostname: patient-care-web
+    container_name: ego-web
+    hostname: ego-web
     ports:
       - "9001:8080"
     env_file:
       - ./denb-web/config/.env.dev
     build:
-      context: ./denb-web/
+      context: ./ego-web/
     deploy:
       mode: replicated
       replicas: 1
     networks:
       - network
-    depends_on:
-      - redis
-  web02:
-    container_name: patient-care-web02
-    hostname: patient-care-web
-    ports:
-      - "9002:8080"
-    env_file:
-      - ./denb-web/config/.env.dev
-    build:
-      context: ./denb-web/
-    deploy:
-      mode: replicated
-      replicas: 1
-    networks:
-      - network
-    depends_on:
-      - redis
 
 networks: # 가장 기본적인 bridge 네트워크
   network:
