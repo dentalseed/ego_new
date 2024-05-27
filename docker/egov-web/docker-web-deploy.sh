@@ -6,7 +6,7 @@ fi
 
 URL="$1:8080/health"
 SUCCESS_MESSAGE="SUCCESS"
-MAX_ATTEMPTS=40
+MAX_ATTEMPTS=100
 DELAY_SECONDS=1
 # 도커 스탑, 삭제
 docker stop $1
@@ -15,7 +15,7 @@ docker rm $1
 # api 배포 test
 docker compose -p $1 -f  ./dev/$1-compose.yml build && docker compose -p $1 -f  ./dev/$1-compose.yml up -d
 
-# 실행 확인1 
+# 실행 확인1 1213
 attempt=1
 while [ $attempt -le $MAX_ATTEMPTS ]
 do
