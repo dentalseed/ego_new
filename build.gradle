@@ -28,8 +28,8 @@ repositories {
     }
 }
 bootWar {
-    archiveBaseName = 'ego-web'
-    archiveFileName = 'ego-web.war'
+    archiveBaseName = 'egov'
+    archiveFileName = 'egov.war'
     archiveVersion = '1.0.0'
 }
  

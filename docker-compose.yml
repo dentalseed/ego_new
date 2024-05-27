@@ -2,8 +2,8 @@ version: "3"
 
 services:
   web01:
-    container_name: ego-web
-    hostname: ego-web
+    container_name: egov-web
+    hostname: egov-web
     ports:
       - "9003:8080"
     build:
