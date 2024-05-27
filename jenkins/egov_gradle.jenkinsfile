@@ -5,7 +5,7 @@ pipeline {
      }
     environment {
         BUILD_TARGET_HOME = '${BUILD_HOME}'
-        PROJECT = 'patient-care'
+        PROJECT = 'egov_web'
         APP_WAR_FILE = 'web.war'
     }
 
@@ -25,7 +25,7 @@ pipeline {
               sh'''
               scp -i /var/jenkins_home/key/denb-v1.pem -P 38371 -r ./docker dena@58.229.180.228:/home/dena/egov_gradle
               cd ./${APP_API}/build/libs
-              scp -i /var/jenkins_home/key/denb-v1.pem -P 38371 ${APP_WAR_FILE} dena@58.229.180.228:/home/dena/egov_gradle/docker/denb-web
+              scp -i /var/jenkins_home/key/denb-v1.pem -P 38371 ${APP_WAR_FILE} dena@58.229.180.228:/home/dena/egov_gradle/docker/egov_gradle
               '''
               echo 'Copy End "${APP_API}"'
           }
@@ -35,9 +35,9 @@ pipeline {
               echo 'Execute Start "${PROJECT}"'
 
               sh'''
-              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/denb-web ; bash;" "chmod +x docker-web-deploy.sh"
-              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/denb-web ; bash;" "./docker-web-deploy.sh  patient-care-web01"
-              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/denb-web ; bash;" "./docker-web-deploy.sh  patient-care-web02"
+              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/egov_gradle ; bash;" "chmod +x docker-web-deploy.sh"
+              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/egov_gradle ; bash;" "./docker-web-deploy.sh  patient-care-web01"
+              ssh -i /var/jenkins_home/key/denb-v1.pem -p 38371 -t dena@58.229.180.228 -T "cd /home/dena/egov_gradle/docker/egov_gradle ; bash;" "./docker-web-deploy.sh  patient-care-web02"
               '''
               echo 'Execute End "${PROJECT}"'
           }

@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  web01:
+    container_name: egov_gradle
+    hostname: egov_gradle
+    ports:
+      - "9003:8080"
+    build:
+      context: ./
+    deploy:
+      mode: replicated
+      replicas: 1
+    networks:
+      - web
+
+
+networks: # 가장 기본적인 bridge 네트워크
+  web:
+    driver: bridge
