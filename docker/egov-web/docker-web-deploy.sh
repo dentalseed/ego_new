@@ -13,8 +13,7 @@ docker stop $1
 docker rm $1
 
 # api 배포
-# docker compose -p $1 -f  ./dev/$1-compose.yml build && docker compose -p $1 -f  ./dev/$1-compose.yml up -d
-docker compose -p $1 -f ./dev/docker-compose.yml build && docker compose -p $1 -f ./dev/docker-compose.yml up -d
+docker compose -p $1 -f  ./dev/$1-compose.yml build && docker compose -p $1 -f  ./dev/$1-compose.yml up -d
 
 # 실행 확인
 attempt=1
