@@ -19,13 +19,7 @@ compileJava {
 group = 'egovframework'
 version = '1.0.0'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
-<<<<<<< HEAD
-sourceCompatibility = '21'
-targetCompatibility = '21'
-=======
 
->>>>>>> 51bdde2b5929d8b141840eff106985eccc1139ba
- 
 repositories {
     mavenCentral()
     maven {
