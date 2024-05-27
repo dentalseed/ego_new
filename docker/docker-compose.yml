@@ -3,15 +3,9 @@ version: "3.1"
 
 # 실행하려는 컨테이너들 정의
 services:
-<<<<<<< HEAD
-  web01:
-    container_name: ego_web01
-    hostname: egov-web
-=======
   web:
     container_name: ego_web
     hostname: ego_web
->>>>>>> 5fc0e588230fa30b312e950deb5bc4ffe230068d
     ports:
       - "9003:8080"
     env_file:
