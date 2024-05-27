@@ -12,10 +12,10 @@ DELAY_SECONDS=1
 docker stop $1
 docker rm $1
 
-# api 배포
+# api 배포 test
 docker compose -p $1 -f  ./dev/$1-compose.yml build && docker compose -p $1 -f  ./dev/$1-compose.yml up -d
 
-# 실행 확인
+# 실행 확인1 
 attempt=1
 while [ $attempt -le $MAX_ATTEMPTS ]
 do
