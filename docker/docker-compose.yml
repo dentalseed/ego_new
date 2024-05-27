@@ -7,9 +7,9 @@ services:
     container_name: egov-web
     hostname: egov-web
     ports:
-      - "9001:8080"
+      - "9003:8080"
     env_file:
-      - ./denb-web/config/.env.dev
+      - ./egov-web/config/.env.dev
     build:
       context: ./egov-web/
     deploy:
