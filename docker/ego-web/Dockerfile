@@ -2,8 +2,8 @@ FROM openjdk:8-jdk-slim
 LABEL authors="dhwnk"
 
 # Dockerfile 변수 선언
-ARG WAR_FILE=ego-web.war
-ARG COPY_WAR_FILE=ego-web.war
+ARG WAR_FILE=ego.war
+ARG COPY_WAR_FILE=ego.war
 
 # 컨테이너의 환경 변수 선언
 ENV COPY_WAR_FILE=${COPY_WAR_FILE}
