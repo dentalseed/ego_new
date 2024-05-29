@@ -20,13 +20,13 @@ pipeline {
         }
         stage('원격 서버로 복사') {
           steps {
-              echo 'Copy Start "${APP_API}"'
+              echo 'Copy Start "war파일 이동"'
               sh'''
               scp -i /var/jenkins_home/key/denb-v1.pem -P 38371 -r ./docker dena@58.229.180.228:/home/dena/egov_gradle
               cd ./${APP_API}/build/libs
               scp -i /var/jenkins_home/key/denb-v1.pem -P 38371 ${APP_WAR_FILE} dena@58.229.180.228:/home/dena/egov_gradle/docker/egov-web
               '''
-              echo 'Copy End "${APP_API}"'
+              echo 'Copy End "war파일 이동"'
           }
         }
         stage('실행') {
