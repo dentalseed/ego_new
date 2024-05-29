@@ -21,6 +21,7 @@ pipeline {
         stage('원격 서버로 복사') {
           steps {
               echo 'Copy Start "${APP_API}"'
+              echo "APP_API: ${APP_API}" // 환경 변수 출력
 
               sh'''
               scp -i /var/jenkins_home/key/denb-v1.pem -P 38371 -r ./docker dena@58.229.180.228:/home/dena/egov_gradle
