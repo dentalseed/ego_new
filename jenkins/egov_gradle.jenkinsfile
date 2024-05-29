@@ -16,7 +16,6 @@ pipeline {
                   sh 'chmod +x gradlew'
                   sh './gradlew bootWar'
                   echo 'Build End "${PROJECT}"'
-                  echo "APP_API: ${APP_API}" // 환경 변수 출력
               }
         }
         stage('원격 서버로 복사') {
